@@ -472,3 +472,13 @@
 1372628331 c:\allegro5\include\allegro5\allegro_native_dialog.h
 	"allegro5/allegro.h"
 
+1519021904 source:c:\al5_games\test\main.c
+	<stdio.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_native_dialog.h>
+
+1519246309 source:c:\al5_games\test\char.c
+	<stdio.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_native_dialog.h>
+

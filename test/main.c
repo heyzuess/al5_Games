@@ -12,6 +12,39 @@ enum MYKEYS {
 
 int main(int argc, char **argv)
 {
+    int iv_program = 0;
+    bool lv_exit = false;
+    while(!lv_exit){
+        iv_program = 0;
+        fprintf(stdout, "Please select a program.\n 1. testGame.c\n 2. char.c\n 3. Exit\n\n");
+        scanf("%d", &iv_program);
+        switch(iv_program){
+            case 0:
+            fprintf(stderr,"No program selected!\n");
+            break;
+
+            case 1:
+            fprintf(stdout,"\ntestGame.c selected.\n");
+            iv_program = testGame(0, "");
+            printf("\ntestGame.c Application has closed.\nProgram returned %d\n\n",iv_program);
+            break;
+
+            case 2:
+            fprintf(stdout,"char.c selected.\n");
+            iv_program = mainChar(0, "");
+            printf("\nchar.c Application has closed.\nProgram returned %d\n\n",iv_program);
+            break;
+
+            case 3:
+            fprintf(stdout, "Exiting Program.\n");
+            lv_exit = true;
+            break;
+        }
+    }
+    return iv_program;
+}
+
+int testGame(int argc, char **argv){
  ALLEGRO_DISPLAY      *display = NULL;
  ALLEGRO_EVENT_QUEUE  *event_queue = NULL;
  ALLEGRO_TIMER        *timer = NULL;

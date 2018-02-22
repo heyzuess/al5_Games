@@ -36,6 +36,9 @@
 			<Add option="-Wall" />
 			<Add directory="../../allegro5/include" />
 		</Compiler>
+		<Unit filename="char.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="loadImage.png" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
