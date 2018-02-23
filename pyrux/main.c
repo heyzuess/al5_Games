@@ -29,6 +29,7 @@ int main(int argc, char **argv)
     char *cv_message = "Failed to initialize ";
     bool lv_exit = false;
     bool lv_redraw = false;
+    bool lv_init[FIRE_AMMO] = {false,false,false,false};
     bool lv_drawCircle[FIRE_AMMO] = {false, false, false, false};
     bool lv_keys[NUM_KEYS] = {false, false, false, false, false};
     float actor_x   = SCREEN_W / CHAR_SIZE + CHAR_SIZE;
@@ -143,21 +144,25 @@ int main(int argc, char **argv)
             if(lv_keys[SPACE] == true){
                 if(!lv_drawCircle[BULLET_1]){
                     lv_drawCircle[BULLET_1] = true;
+                    lv_init[BULLET_1] = true;
                     passTime[BULLET_1] = al_get_timer_count(t_defaultTime);
                 }
                 else if(!lv_drawCircle[BULLET_2] &&
                         currentTime[BULLET_1] - passTime[BULLET_1] > FIRE_DIST - (FIRE_DIST / 2)){
                     lv_drawCircle[BULLET_2] = true;
+                    lv_init[BULLET_2] = true;
                     passTime[BULLET_2] = al_get_timer_count(t_defaultTime);
                 }
                 else if(!lv_drawCircle[BULLET_3] &&
                         currentTime[BULLET_2] - passTime[BULLET_2] > FIRE_DIST - (FIRE_DIST / 2)){
                     lv_drawCircle[BULLET_3] = true;
+                    lv_init[BULLET_3] = true;
                     passTime[BULLET_3] = al_get_timer_count(t_defaultTime);
                 }
                 else if(!lv_drawCircle[BULLET_4] &&
                         currentTime[BULLET_3] - passTime[BULLET_3] > FIRE_DIST - (FIRE_DIST / 2)){
                     lv_drawCircle[BULLET_4] = true;
+                    lv_init[BULLET_4] = true;
                     passTime[BULLET_4] = al_get_timer_count(t_defaultTime);
                 }
             }
@@ -277,46 +282,69 @@ int main(int argc, char **argv)
 
             al_clear_to_color(al_map_rgb(0,0,0));
             al_draw_bitmap(b_mainActor, actor_x, actor_y, 0);
+
+            circle_ix = actor_x + CHAR_SIZE;
+            circle_iy = actor_y + STEP_SIZE * 2;
             if(lv_drawCircle[BULLET_1]){
+                if(lv_init[BULLET_1]){
+                    lv_init[BULLET_1] = false;
+                    circle_x[BULLET_1] = circle_ix;
+                    circle_y[BULLET_1] = circle_iy;
+                }
                 al_draw_filled_circle(circle_x[BULLET_1],circle_y[BULLET_1],STEP_SIZE,al_map_rgb(200,100,0));
                 currentTime[BULLET_1] = al_get_timer_count(t_defaultTime);
                 if(currentTime[BULLET_1] - passTime[BULLET_1] > FIRE_DIST){
                     lv_drawCircle[BULLET_1] = false;
-                    circle_x[BULLET_1] = actor_x + CHAR_SIZE;
-                    circle_y[BULLET_1] = actor_y + STEP_SIZE * 2;
+                    circle_x[BULLET_1] = circle_ix;
+                    circle_y[BULLET_1] = circle_iy;
                     circle_dx = STEP_SIZE;
                     //circle_dy = STEP_SIZE;
                 }
             }
             if(lv_drawCircle[BULLET_2]){
+                if(lv_init[BULLET_2]){
+                    lv_init[BULLET_2] = false;
+                    circle_x[BULLET_2] = circle_ix;
+                    circle_y[BULLET_2] = circle_iy;
+                }
                 al_draw_filled_circle(circle_x[BULLET_2],circle_y[BULLET_2],STEP_SIZE,al_map_rgb(200,100,0));
                 currentTime[BULLET_2] = al_get_timer_count(t_defaultTime);
                 if(currentTime[BULLET_2] - passTime[BULLET_2] > FIRE_DIST){
                     lv_drawCircle[BULLET_2] = false;
-                    circle_x[BULLET_2] = actor_x + CHAR_SIZE;
-                    circle_y[BULLET_2] = actor_y + STEP_SIZE * 2;
+                    circle_x[BULLET_2] = circle_ix;
+                    circle_y[BULLET_2] = circle_iy;
                     circle_dx = STEP_SIZE;
                     //circle_dy = STEP_SIZE;
                 }
             }
             if(lv_drawCircle[BULLET_3]){
+                if(lv_init[BULLET_3]){
+                    lv_init[BULLET_3] = false;
+                    circle_x[BULLET_3] = circle_ix;
+                    circle_y[BULLET_3] = circle_iy;
+                }
                 al_draw_filled_circle(circle_x[BULLET_3],circle_y[BULLET_3],STEP_SIZE,al_map_rgb(200,100,0));
                 currentTime[BULLET_3] = al_get_timer_count(t_defaultTime);
                 if(currentTime[BULLET_3] - passTime[BULLET_3] > FIRE_DIST){
                     lv_drawCircle[BULLET_3] = false;
-                    circle_x[BULLET_3] = actor_x + CHAR_SIZE;
-                    circle_y[BULLET_3] = actor_y + STEP_SIZE * 2;
+                    circle_x[BULLET_3] = circle_ix;
+                    circle_y[BULLET_3] = circle_iy;
                     circle_dx = STEP_SIZE;
                     //circle_dy = STEP_SIZE;
                 }
             }
             if(lv_drawCircle[BULLET_4]){
+                if(lv_init[BULLET_4]){
+                    lv_init[BULLET_4] = false;
+                    circle_x[BULLET_4] = circle_ix;
+                    circle_y[BULLET_4] = circle_iy;
+                }
                 al_draw_filled_circle(circle_x[BULLET_4],circle_y[BULLET_4],STEP_SIZE,al_map_rgb(200,100,0));
                 currentTime[BULLET_3] = al_get_timer_count(t_defaultTime);
                 if(currentTime[BULLET_4] - passTime[BULLET_4] > FIRE_DIST){
                     lv_drawCircle[BULLET_4] = false;
-                    circle_x[BULLET_4] = actor_x + CHAR_SIZE;
-                    circle_y[BULLET_4] = actor_y + STEP_SIZE * 2;
+                    circle_x[BULLET_4] = circle_ix;
+                    circle_y[BULLET_4] = circle_iy;
                     circle_dx = STEP_SIZE;
                     //circle_dy = STEP_SIZE;
                 }
