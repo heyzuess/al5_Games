@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add library="../../allegro5/lib/liballegro-5.0.10-monolith-mt-debug.a" />
@@ -25,6 +26,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -36,9 +38,12 @@
 			<Add option="-Wall" />
 			<Add directory="../../allegro5/include" />
 		</Compiler>
+		<Unit filename="include/alContent.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/alContent.cpp" />
+		<Unit filename="src/test.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
