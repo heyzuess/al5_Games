@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="SDL_New" />
+		<Option title="SDL_main" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/SDL_New" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/SDL_main" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -16,7 +16,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/SDL_New" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/SDL_main" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -30,6 +30,7 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-fexceptions" />
 			<Add directory="../../SDL2/include" />
 		</Compiler>
 		<Linker>
@@ -37,12 +38,6 @@
 			<Add directory="../../SDL2/lib" />
 		</Linker>
 		<Unit filename="main.cpp" />
-		<Unit filename="mainApp.h" />
-		<Unit filename="mainApp_OnCleanup.cpp" />
-		<Unit filename="mainApp_OnEvent.cpp" />
-		<Unit filename="mainApp_OnInit.cpp" />
-		<Unit filename="mainApp_OnLoop.cpp" />
-		<Unit filename="mainApp_OnRender.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

@@ -1,7 +1,9 @@
 # depslib dependency file v1.0
-1520020975 source:c:\alproj\sdl_new\main.c
-	<SDL2/SDL.h>
+1520038536 source:c:\alproj\sdl_main\main.cpp
+	<iostream>
+	<stdlib.h>
 	<stdio.h>
+	<SDL2/SDL.h>
 
 1519922211 c:\sdl2\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -337,30 +339,9 @@
 	"begin_code.h"
 	"close_code.h"
 
-1520020975 source:c:\al5_games\sdl_new\main.c
-	<SDL2/SDL.h>
+1520045242 source:c:\al5_games\sdl_main\main.cpp
+	<iostream>
+	<stdlib.h>
 	<stdio.h>
-
-1520034224 source:c:\al5_games\sdl_new\main.cpp
 	<SDL2/SDL.h>
-	<stdio.h>
-	"mainApp.h"
-
-1520034548 c:\al5_games\sdl_new\mainapp.h
-	<SDL2/SDL.h>
-
-1520033183 source:c:\al5_games\sdl_new\mainapp_onevent.cpp
-	"mainApp.h"
-
-1520034178 source:c:\al5_games\sdl_new\mainapp_oncleanup.cpp
-	"mainApp.h"
-
-1520034526 source:c:\al5_games\sdl_new\mainapp_oninit.cpp
-	"mainApp.h"
-
-1520033225 source:c:\al5_games\sdl_new\mainapp_onloop.cpp
-	"mainApp.h"
-
-1520033247 source:c:\al5_games\sdl_new\mainapp_onrender.cpp
-	"mainApp.h"
 
